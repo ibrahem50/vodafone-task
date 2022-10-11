@@ -4,6 +4,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../layouts/header/header.component';
 import { NgModule } from '@angular/core';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [HeaderComponent],
@@ -12,6 +13,7 @@ import { NgModule } from '@angular/core';
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxSpinnerModule,
   ],
   exports: [
     CommonModule,
@@ -19,6 +21,7 @@ import { NgModule } from '@angular/core';
     HeaderComponent,
     ReactiveFormsModule,
     FormsModule,
+    NgxSpinnerModule,
   ],
 })
 export class SharedModule {}

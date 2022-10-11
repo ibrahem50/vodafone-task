@@ -4,4 +4,9 @@ export interface ProductModel {
   description: string;
   image: string;
   category: string;
+  id: number;
+  rating?: {
+    rate: number;
+    count: number;
+  };
 }

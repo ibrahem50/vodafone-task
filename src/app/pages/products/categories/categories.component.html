@@ -1,0 +1,15 @@
+<ng-container *ngIf="categories$ | async; let categories">
+  <section class="categories">
+    <section class="categories__wrapper">
+      <h1 class="categories__wrapper--title">Categories</h1>
+      <ul class="categories__wrapper__list">
+        <li
+          class="categories__wrapper__list--element"
+          *ngFor="let category of categories"
+        >
+          {{ category }}
+        </li>
+      </ul>
+    </section>
+  </section>
+</ng-container>
