@@ -1,5 +1,5 @@
 {
-  "name": "vodafone-task",
+  "name": "our-store",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^14.2.5",
     "@angular/platform-browser-dynamic": "^14.2.5",
     "@angular/router": "^14.2.5",
-    "@gilsdav/ngx-translate-router": "^3.1.9",
+    "@gilsdav/ngx-translate-router": "^5.1.0",
     "@gilsdav/ngx-translate-router-http-loader": "^2.0.0",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
