@@ -1,0 +1,42 @@
+.header {
+  background-color: var(--primary-color);
+  height: 4rem;
+  padding-inline: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &--title {
+    margin: 0;
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__lang {
+      &--btn {
+        border-radius: 2rem;
+        padding-block: 0.7rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        border: none;
+      }
+    }
+    &__user {
+      &--btn {
+        background-color: transparent;
+        color: #ffffff;
+        font-weight: bold;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<form class="login" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+  <section class="login__container">
+    <h1 class="login__container--title">Sign in</h1>
+    <section class="login__container__inputs">
+      <input
+        formControlName="userName"
+        class="login__container__inputs--input"
+        placeholder="user name"
+        type="text"
+      />
+      <input
+        formControlName="password"
+        class="login__container__inputs--input"
+        placeholder="password"
+        type="password"
+      />
+    </section>
+    <p *ngIf="errorMessage" class="login__container--error">
+      user name or password is wrong
+    </p>
+    <section class="login__container__button">
+      <button
+        type="submit"
+        class="login__container__button--btn general-button"
+      >
+        Continue
+      </button>
+    </section>
+  </section>
+</form>

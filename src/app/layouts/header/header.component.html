@@ -1,0 +1,39 @@
+<header class="header">
+  <h1 class="header--title">Our Store</h1>
+  <section class="header__details">
+    <ng-container *ngIf="userData$ | async; let user">
+      <section class="header__details__user" *ngIf="user.userType !== 3">
+        <button
+          class="header__details__user--btn"
+          mat-button
+          [matMenuTriggerFor]="menu"
+        >
+          {{ user.userName }}
+          <mat-icon>expand_more</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button (click)="logout()" mat-menu-item>logout</button>
+        </mat-menu>
+      </section>
+    </ng-container>
+    <section class="header__details__lang">
+      <button
+        class="header__details__lang--btn"
+        mat-button
+        [matMenuTriggerFor]="menu"
+      >
+        {{ currentLanguage == "ar" ? "عربي" : "English" }}
+        <mat-icon>expand_more</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button
+          (click)="changeLanguage(lang.key)"
+          *ngFor="let lang of languages; trackBy: track"
+          mat-menu-item
+        >
+          {{ lang.key }}
+        </button>
+      </mat-menu>
+    </section>
+  </section>
+</header>

@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: "Cabin", "IBM Plex Sans Arabic", sans-serif;
+}
+
+:root {
+  --primary-color: #2e3339;
+}
+
+.general-button {
+  height: 2.5rem;
+  width: 8rem;
+  background-color: #000000;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffffff;
+}
