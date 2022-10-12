@@ -5,6 +5,8 @@
   background-color: #86878c;
   align-items: center;
   padding-inline: 2rem;
+  position: sticky;
+  top: 0;
   &--title {
     color: #ffff;
     flex-basis: 20%;
