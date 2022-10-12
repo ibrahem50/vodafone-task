@@ -1,7 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 
 import { DeleteDialogComponent } from 'src/app/shared/components/delete-dialog/delete-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ProductActionPopupComponent } from '../product-action-popup/product-action-popup.component';
 import { ProductModel } from '../product.model';
 import { ProductService } from '../services/product.service';
 
@@ -9,6 +16,7 @@ import { ProductService } from '../services/product.service';
   selector: 'app-product-table',
   templateUrl: './product-table.component.html',
   styleUrls: ['./product-table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductTableComponent implements OnInit {
   @Input('products') products: ProductModel[] = [];
@@ -27,6 +35,22 @@ export class ProductTableComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+
+  add() {
+    this.dialog
+      .open(ProductActionPopupComponent, {
+        data: {
+          products: this.products,
+        },
+      })
+      .afterClosed()
+      .subscribe((res) => {
+        if (res) {
+          res = res.map((res: ProductModel[]) => res);
+          this.productService.products$.next(res);
+        }
+      });
+  }
 
   edit(product: ProductModel) {
     console.log(product);

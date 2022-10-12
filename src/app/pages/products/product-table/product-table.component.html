@@ -1,6 +1,6 @@
 <section class="table" *ngIf="products.length > 0">
   <div class="table__button">
-    <button class="general-button">Add Product</button>
+    <button class="general-button" (click)="add()">Add Product</button>
   </div>
   <div class="table__container">
     <table

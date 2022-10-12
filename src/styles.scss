@@ -76,3 +76,11 @@ html {
   circle {
   stroke: var(--primary-color);
 }
+
+.mat-select {
+  height: 100%;
+  text-align: start;
+  .mat-select-trigger {
+    height: 100%;
+  }
+}

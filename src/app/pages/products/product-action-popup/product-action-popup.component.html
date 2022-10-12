@@ -1,0 +1,37 @@
+<form class="product" [formGroup]="productForm" (ngSubmit)="submit()">
+  <h1 class="product--title">Add Product</h1>
+  <section class="product--input" *ngIf="categories$ | async; let categories">
+    <mat-select formControlName="category" placeholder="category">
+      <mat-option *ngFor="let category of categories" [value]="category">{{
+        category
+      }}</mat-option>
+    </mat-select>
+  </section>
+  <input
+    formControlName="image"
+    class="product--input"
+    type="text"
+    placeholder="image link"
+  />
+  <input
+    formControlName="title"
+    class="product--input"
+    type="text"
+    placeholder="title"
+  />
+  <input
+    formControlName="description"
+    class="product--input"
+    type="text"
+    placeholder="description"
+  />
+  <input
+    formControlName="price"
+    class="product--input"
+    type="number"
+    placeholder="price"
+  />
+  <div class="product__buttons">
+    <button type="submit" class="general-button">Submit</button>
+  </div>
+</form>

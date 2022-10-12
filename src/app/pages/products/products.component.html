@@ -8,7 +8,7 @@
       ></app-product-card>
     </section>
   </section>
-  <section class="container__tabler" *ngIf="user.userType == 1">
+  <section class="container__table" *ngIf="user.userType == 1">
     <ng-container *ngIf="products$ | async; let products">
       <app-product-table
         *ngIf="products.length > 0"
