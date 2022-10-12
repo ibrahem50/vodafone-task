@@ -1,4 +1,9 @@
-@import "src/styles.scss";
+@mixin text-line-clamp($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .card {
   border: 1px solid #2e3339;
@@ -27,7 +32,6 @@
       &__wrapper {
         &--title {
           font-size: 1rem;
-          //   @include text-line-clamp(2);
         }
         &--desc {
           font-size: 1rem;
