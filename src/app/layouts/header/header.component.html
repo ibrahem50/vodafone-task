@@ -1,5 +1,5 @@
 <header class="header">
-  <h1 class="header--title">Our Store</h1>
+  <h1 class="header--title">{{ "OUR_STORE" | translate }}</h1>
   <section class="header__details">
     <ng-container *ngIf="userData$ | async; let user">
       <section class="header__details__user" *ngIf="user.userType !== 3">

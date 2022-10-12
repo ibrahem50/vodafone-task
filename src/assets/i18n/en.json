@@ -1,0 +1,10 @@
+{
+  "OUR_STORE": "Our Store",
+  "SIGN_IN": {
+    "TITLE": "Sign in",
+    "USER_NAME": "User name",
+    "PASSWORD": "Password",
+    "ERROR_MESSAGE": "user name or password is wrong",
+    "SUBMIT": "Continue"
+  }
+}

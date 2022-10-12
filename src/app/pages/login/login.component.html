@@ -1,17 +1,17 @@
 <form class="login" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
   <section class="login__container">
-    <h1 class="login__container--title">Sign in</h1>
+    <h1 class="login__container--title">{{ "SIGN_IN.TITLE" | translate }}</h1>
     <section class="login__container__inputs">
       <input
         formControlName="userName"
         class="login__container__inputs--input"
-        placeholder="user name"
+        [placeholder]="'SIGN_IN.USER_NAME' | translate"
         type="text"
       />
       <input
         formControlName="password"
         class="login__container__inputs--input"
-        placeholder="password"
+        [placeholder]="'SIGN_IN.PASSWORD' | translate"
         type="password"
       />
     </section>
@@ -23,7 +23,7 @@
         type="submit"
         class="login__container__button--btn general-button"
       >
-        Continue
+        {{ "SIGN_IN.SUBMIT" | translate }}
       </button>
     </section>
   </section>

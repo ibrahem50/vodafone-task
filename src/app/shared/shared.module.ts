@@ -6,6 +6,7 @@ import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.
 import { HeaderComponent } from '../layouts/header/header.component';
 import { NgModule } from '@angular/core';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [HeaderComponent, DeleteDialogComponent],
@@ -15,6 +16,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     FormsModule,
     NgxSpinnerModule,
+    TranslateModule,
   ],
   exports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     FormsModule,
     NgxSpinnerModule,
     DeleteDialogComponent,
+    TranslateModule,
   ],
 })
 export class SharedModule {}
