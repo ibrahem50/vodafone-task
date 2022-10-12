@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
-import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { ProductService } from './../services/product.service';
 
@@ -8,6 +7,7 @@ import { ProductService } from './../services/product.service';
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoriesComponent implements OnInit {
   categories$: Observable<string[]> = new Observable();
@@ -15,5 +15,19 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.categories$ = this.productService.getCategories();
+    this.getAllCategories();
+  }
+  chooseCategory(category: string) {
+    this.productService.getProductByCategory(category).subscribe((res) => {
+      this.productService.products$.next(res);
+    });
+  }
+  getAllCategories() {
+    this.productService.getProducts().subscribe((res) => {
+      this.productService.products$.next(res);
+    });
+  }
+  track(index: number, item: string) {
+    return item;
   }
 }

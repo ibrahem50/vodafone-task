@@ -7,7 +7,8 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 16px;
+  min-width: auto !important;
+  min-height: auto !important;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
 
 :root {
   --primary-color: #2e3339;
+  --primary-shadow: 1px 5px 5px #4c4c4c29;
 }
 
 .general-button {
@@ -29,4 +31,38 @@ body {
   font-weight: bold;
   cursor: pointer;
   color: #ffffff;
+}
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100% !important;
+  @media screen and (min-width: 2559px) {
+    font-size: 74.5% !important;
+  }
+
+  @media screen and (min-width: 4095px) {
+    font-size: 72.5% !important;
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 56.25% !important;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 50% !important;
+  }
+}
+
+@mixin text-line-clamp($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

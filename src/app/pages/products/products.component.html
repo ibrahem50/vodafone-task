@@ -1,3 +1,9 @@
 <section class="container">
   <app-categories></app-categories>
+  <section class="container__card" *ngIf="products$ | async; let products">
+    <app-product-card
+      *ngFor="let product of products; trackBy: track"
+      [product]="product"
+    ></app-product-card>
+  </section>
 </section>

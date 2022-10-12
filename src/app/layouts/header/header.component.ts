@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 import { BehaviorSubject } from 'rxjs';
 import { UserService } from 'src/app/pages/login/services/user.service';
@@ -7,6 +7,7 @@ import { UserService } from 'src/app/pages/login/services/user.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
   languages: { key: string; value: number }[] = [

@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   &--title {
-    margin: 0;
+    // margin: 0;
     font-size: 2rem;
     color: #ffffff;
     font-weight: bold;
@@ -18,7 +18,7 @@
     &__lang {
       &--btn {
         border-radius: 2rem;
-        padding-block: 0.7rem;
+        padding-block: 0.5rem;
         cursor: pointer;
         font-size: 0.9rem;
         font-weight: bold;
@@ -36,6 +36,7 @@
         font-size: 1.2rem;
         cursor: pointer;
         display: flex;
+        align-items: center;
       }
     }
   }

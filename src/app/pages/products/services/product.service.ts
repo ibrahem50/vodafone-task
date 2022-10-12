@@ -1,12 +1,17 @@
+import { BehaviorSubject, Observable } from 'rxjs';
+
 import { ApiService } from 'src/app/core/api/api.service';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ProductModel } from '../product.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+  products$: BehaviorSubject<ProductModel[]> = new BehaviorSubject<
+    ProductModel[]
+  >([]);
+
   constructor(private apiService: ApiService) {}
 
   getProducts(): Observable<ProductModel[]> {
@@ -14,5 +19,8 @@ export class ProductService {
   }
   getCategories(): Observable<string[]> {
     return this.apiService.getRequest('products/categories');
+  }
+  getProductByCategory(category: string): Observable<ProductModel[]> {
+    return this.apiService.getRequest(`products/category/${category}`);
   }
 }
