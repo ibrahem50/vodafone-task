@@ -1,30 +1,39 @@
 <form class="product" [formGroup]="productForm" (ngSubmit)="submit()">
-  <h1 class="product--title">Add Product</h1>
-  <section class="product--input" *ngIf="categories$ | async; let categories">
+  <h1 class="product--title">
+    {{ data.edit ? "Edit Product" : "Add Product" }}
+  </h1>
+  <label>Category</label>
+  <section class="product--input">
     <mat-select formControlName="category" placeholder="category">
-      <mat-option *ngFor="let category of categories" [value]="category">{{
-        category
-      }}</mat-option>
+      <ng-container *ngIf="categories$ | async; let categories">
+        <mat-option *ngFor="let category of categories" [value]="category">{{
+          category
+        }}</mat-option>
+      </ng-container>
     </mat-select>
   </section>
+  <label>Image url</label>
   <input
     formControlName="image"
     class="product--input"
     type="text"
     placeholder="image link"
   />
+  <label>Title</label>
   <input
     formControlName="title"
     class="product--input"
     type="text"
     placeholder="title"
   />
+  <label>Description</label>
   <input
     formControlName="description"
     class="product--input"
     type="text"
     placeholder="description"
   />
+  <label>Price</label>
   <input
     formControlName="price"
     class="product--input"

@@ -41,6 +41,7 @@ export class ProductTableComponent implements OnInit {
       .open(ProductActionPopupComponent, {
         data: {
           products: this.products,
+          edit: true,
         },
       })
       .afterClosed()
@@ -53,7 +54,21 @@ export class ProductTableComponent implements OnInit {
   }
 
   edit(product: ProductModel) {
-    console.log(product);
+    this.dialog
+      .open(ProductActionPopupComponent, {
+        data: {
+          product: product,
+          products: this.products,
+          edit: true,
+        },
+      })
+      .afterClosed()
+      .subscribe((res) => {
+        if (res) {
+          res = res.map((res: ProductModel[]) => res);
+          this.productService.products$.next(res);
+        }
+      });
   }
 
   delete(product: ProductModel) {

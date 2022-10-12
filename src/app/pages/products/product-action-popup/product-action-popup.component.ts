@@ -31,23 +31,46 @@ export class ProductActionPopupComponent implements OnInit {
     public dialogref: MatDialogRef<ProductActionPopupComponent>,
     @Inject(MAT_DIALOG_DATA)
     public data: {
+      product: ProductModel;
       products: ProductModel[];
+      edit: boolean;
     }
   ) {}
 
   ngOnInit(): void {
     this.categories$ = this.productService.getCategories();
+    if (this.data.edit) {
+      this.productForm.patchValue({
+        title: this.data.product.title,
+        description: this.data.product.description,
+        image: this.data.product.image,
+        category: this.data.product.category,
+        price: this.data.product.price,
+      });
+    }
   }
 
   submit() {
     this.productForm.markAllAsTouched();
     if (this.productForm.valid) {
-      this.productService
-        .addProduct(this.productForm.value)
-        .subscribe((res) => {
-          this.data.products.push(res);
-          this.dialogref.close(this.data.products);
-        });
+      if (!this.data.edit) {
+        this.productService
+          .addProduct(this.productForm.value)
+          .subscribe((res) => {
+            this.data.products.push(res);
+            this.dialogref.close(this.data.products);
+          });
+      } else {
+        this.productService
+          .updateProduct(this.data.product.id, this.productForm.value)
+          .subscribe((res) => {
+            const index = this.data.products.findIndex((product) => {
+              return product.id === res.id;
+            });
+            this.data.products[index] = res;
+            this.dialogref.close(this.data.products);
+          });
+      }
     }
   }
 }

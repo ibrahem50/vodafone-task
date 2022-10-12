@@ -29,4 +29,10 @@ export class ProductService {
   deleteProduct(id: number): Observable<ProductModel> {
     return this.apiService.deleteRequest(`products/${id}`);
   }
+  updateProduct(
+    id: number,
+    product: ProductExportModel
+  ): Observable<ProductModel> {
+    return this.apiService.putRequest(`products/${id}`, product);
+  }
 }

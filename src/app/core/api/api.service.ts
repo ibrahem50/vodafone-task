@@ -31,7 +31,7 @@ export class ApiService {
       this.httpOption
     );
   }
-  putRequest<T>(path: string, data: ProductModel): Observable<T> {
+  putRequest<T>(path: string, data: ProductExportModel): Observable<T> {
     return this.http.put<T>(
       `${environment.apiUrl}/${path}`,
       data,
