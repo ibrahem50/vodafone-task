@@ -4,11 +4,11 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
+import { delay, finalize } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 import { LoadingService } from './services/loading.service';
 import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {

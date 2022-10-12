@@ -71,3 +71,8 @@ html {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.mat-progress-spinner.mat-progress-spinner-indeterminate-animation[mode="indeterminate"]
+  circle {
+  stroke: var(--primary-color);
+}
