@@ -1,4 +1,4 @@
-<figure class="card" *ngIf="product" (click)="openProductDetails()">
+<figure class="card" *ngIf="product">
   <section class="card__wrapper">
     <header class="card__wrapper__img">
       <img
@@ -19,7 +19,9 @@
           {{ product.price + "$" }}
         </h2>
         <div class="card__wrapper__info__wrapper__button">
-          <button class="general-button">More details</button>
+          <button class="general-button" (click)="openProductDetails()">
+            More details
+          </button>
         </div>
       </footer>
     </section>

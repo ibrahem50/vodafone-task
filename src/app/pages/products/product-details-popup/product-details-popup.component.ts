@@ -19,9 +19,7 @@ export class ProductDetailsPopupComponent implements OnInit {
     public data: {
       productData: ProductModel;
     }
-  ) {
-    console.log(this.data.productData, 'product');
-  }
+  ) {}
 
   ngOnInit(): void {}
 }

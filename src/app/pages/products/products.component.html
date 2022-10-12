@@ -1,11 +1,17 @@
 <ng-container *ngIf="user$ | async; let user">
+  <app-categories></app-categories>
   <section class="container" *ngIf="user.userType == 2">
-    <app-categories></app-categories>
     <section class="container__card" *ngIf="products$ | async; let products">
       <app-product-card
         *ngFor="let product of products; trackBy: track"
         [product]="product"
       ></app-product-card>
     </section>
+  </section>
+  <section class="container__tabler" *ngIf="user.userType == 1">
+    <app-product-table
+      *ngIf="products$ | async; let products"
+      [products]="products"
+    ></app-product-table>
   </section>
 </ng-container>

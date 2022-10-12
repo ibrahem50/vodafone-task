@@ -8,6 +8,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDetailsPopupComponent } from './product-details-popup/product-details-popup.component';
 import { ProductsComponent } from './products.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ProductTableComponent } from './product-table/product-table.component';
 
 const routes: Routes = [{ path: '', component: ProductsComponent }];
 
@@ -17,6 +18,7 @@ const routes: Routes = [{ path: '', component: ProductsComponent }];
     CategoriesComponent,
     ProductCardComponent,
     ProductDetailsPopupComponent,
+    ProductTableComponent,
   ],
   imports: [
     CommonModule,

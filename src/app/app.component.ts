@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { LoadingService } from './core/services/loading.service';
 import { UserService } from 'src/app/pages/login/services/user.service';
-import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-root',
