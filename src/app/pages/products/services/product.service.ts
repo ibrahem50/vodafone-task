@@ -23,4 +23,7 @@ export class ProductService {
   getProductByCategory(category: string): Observable<ProductModel[]> {
     return this.apiService.getRequest(`products/category/${category}`);
   }
+  deleteProduct(id: number): Observable<ProductModel> {
+    return this.apiService.deleteRequest(`products/${id}`);
+  }
 }

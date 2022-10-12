@@ -4,10 +4,26 @@
   &--title {
     margin-block: 1rem;
   }
+  &__button {
+    margin-bottom: 1rem;
+  }
   &__container {
     &--content {
       width: 100%;
-
+      .buttons {
+        display: flex;
+        justify-content: center;
+        &__wrapper {
+          display: flex;
+          justify-content: space-between;
+          width: 40%;
+          .general-button {
+            width: fit-content !important;
+            min-width: 3rem;
+            height: 2rem !important;
+          }
+        }
+      }
       th {
         background-color: #eeeeee;
         color: #2759e4;

@@ -9,9 +9,11 @@
     </section>
   </section>
   <section class="container__tabler" *ngIf="user.userType == 1">
-    <app-product-table
-      *ngIf="products$ | async; let products"
-      [products]="products"
-    ></app-product-table>
+    <ng-container *ngIf="products$ | async; let products">
+      <app-product-table
+        *ngIf="products.length > 0"
+        [products]="products"
+      ></app-product-table>
+    </ng-container>
   </section>
 </ng-container>

@@ -1,4 +1,7 @@
 <section class="table" *ngIf="products.length > 0">
+  <div class="table__button">
+    <button class="general-button">Add Product</button>
+  </div>
   <div class="table__container">
     <table
       mat-table
@@ -10,12 +13,30 @@
           {{ col }}
         </th>
         <td mat-cell *matCellDef="let element">
-          {{ col != "image" ? element[col] : "" }}
+          {{ col !== "image" ? (col !== "actions" ? element[col] : "") : "" }}
           <img
             *ngIf="col == 'image'"
             [src]="element[col]"
             alt="product-image"
           />
+          <div class="buttons">
+            <div class="buttons__wrapper">
+              <button
+                class="general-button"
+                *ngIf="col == 'actions'"
+                (click)="edit(element)"
+              >
+                Edit
+              </button>
+              <button
+                class="general-button"
+                *ngIf="col == 'actions'"
+                (click)="delete(element)"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </td>
       </ng-container>
 

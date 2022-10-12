@@ -2,12 +2,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularMaterialModule } from './angular-material.module';
 import { CommonModule } from '@angular/common';
+import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 import { HeaderComponent } from '../layouts/header/header.component';
 import { NgModule } from '@angular/core';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, DeleteDialogComponent],
   imports: [
     CommonModule,
     AngularMaterialModule,
@@ -22,6 +23,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     FormsModule,
     NgxSpinnerModule,
+    DeleteDialogComponent,
   ],
 })
 export class SharedModule {}
