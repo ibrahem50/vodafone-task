@@ -5,6 +5,8 @@ import {
   OnInit,
 } from '@angular/core';
 
+import { MatDialog } from '@angular/material/dialog';
+import { ProductDetailsPopupComponent } from '../product-details-popup/product-details-popup.component';
 import { ProductModel } from 'src/app/pages/products/product.model';
 
 @Component({
@@ -17,7 +19,16 @@ export class ProductCardComponent implements OnInit {
   @Input('product')
   product!: ProductModel;
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {}
+
+  openProductDetails() {
+    this.dialog.open(ProductDetailsPopupComponent, {
+      panelClass: 'product-details-container',
+      data: {
+        productData: this.product,
+      },
+    });
+  }
 }

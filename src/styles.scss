@@ -59,7 +59,12 @@ html {
     font-size: 50% !important;
   }
 }
-
+.product-details-container {
+  .mat-dialog-container {
+    max-height: 90vh;
+    padding: 0;
+  }
+}
 @mixin text-line-clamp($line: 2) {
   display: -webkit-box;
   -webkit-line-clamp: $line;

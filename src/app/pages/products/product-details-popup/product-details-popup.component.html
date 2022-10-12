@@ -1,1 +1,16 @@
-<p>product-details-popup works!</p>
+<section class="product" *ngIf="data.productData">
+  <section class="product__image">
+    <img class="product__image--img" [src]="data.productData.image" />
+  </section>
+  <section class="product__details">
+    <h1 class="product__details--title">{{ data.productData.title }}</h1>
+    <p class="product__details--rate">
+      rate : {{ data.productData.rating?.rate }} ,
+      {{ data.productData.rating?.count }} Person
+    </p>
+    <p class="product__details--desc">
+      {{ data.productData.description }}
+    </p>
+    <h2 class="product__details--title">220$</h2>
+  </section>
+</section>
