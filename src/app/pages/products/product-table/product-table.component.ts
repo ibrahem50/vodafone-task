@@ -41,7 +41,7 @@ export class ProductTableComponent implements OnInit {
       .open(ProductActionPopupComponent, {
         data: {
           products: this.products,
-          edit: true,
+          edit: false,
         },
       })
       .afterClosed()
